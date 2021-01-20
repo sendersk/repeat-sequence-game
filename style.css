@@ -28,3 +28,12 @@ html {
       grid-template-columns: 40% 40% 20%;
       grid-gap: 40px;
   }
+
+  header {
+      text-align: center;
+      font-size: 18px;
+  }
+
+  .heading {
+      font-size: 3rem;
+  }
