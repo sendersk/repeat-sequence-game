@@ -64,3 +64,9 @@ html {
     background-color: #a09e13;
     transform: translateY(10px);
   }
+
+  .info-section {
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+  }
