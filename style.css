@@ -47,3 +47,20 @@ html {
     margin-top: 30px;
     margin-bottom: 40px;
   }
+
+  .tile {
+    background-color: #000a96;
+    box-shadow: 0 0 0 1px #0c24ada9 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #c93a12, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+    transition: 0.15s;
+  }
+
+  .tile:hover, .tile:focus {
+    background-color: #fa8500;
+    box-shadow: 0 0 0 1px #ffae00 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 10px 0 0 #e62b00, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6);
+  }
+
+  .tile:active, .tile.activated {
+    box-shadow: 0 0 0 1px #c2bf1c inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+    background-color: #a09e13;
+    transform: translateY(10px);
+  }
