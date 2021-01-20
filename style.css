@@ -9,3 +9,22 @@ html {
     padding: 0;
     box-sizing: inherit;
   }
+
+  body {
+      display: flex;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+  }
+
+  .game {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+
+  .game-field {
+      display: grid;
+      grid-template-columns: 40% 40% 20%;
+      grid-gap: 40px;
+  }
