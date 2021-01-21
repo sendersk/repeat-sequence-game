@@ -27,11 +27,19 @@ function humanTurn(level) {
 }
 
 function activateTile(number) {
-    const tile = document.querySelector(`[data-tile='${number}']`);
-  
-    tile.classList.add("activated");
-  
+  const tile = document.querySelector(`[data-tile='${number}']`);
+
+  tile.classList.add("activated");
+
+  setTimeout(() => {
+    tile.classList.remove("activated");
+  }, 500);
+}
+
+function playRound(nextSequence) {
+  nextSequence.forEach((color, index) => {
     setTimeout(() => {
-      tile.classList.remove("activated");
-    }, 300);
-  }
+      activateTile(color);
+    }, (index + 1) * 500);
+  });
+}
