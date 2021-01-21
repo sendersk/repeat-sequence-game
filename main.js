@@ -1,4 +1,4 @@
-let sequnce = [];
+let sequence = [];
 let humanSequence = [];
 let level = 0;
 
@@ -37,9 +37,9 @@ function activateTile(number) {
 }
 
 function playRound(nextSequence) {
-  nextSequence.forEach((color, index) => {
+  nextSequence.forEach((number, index) => {
     setTimeout(() => {
-      activateTile(color);
+      activateTile(number);
     }, (index + 1) * 500);
   });
 }
