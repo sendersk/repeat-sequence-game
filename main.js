@@ -25,3 +25,13 @@ function humanTurn(level) {
   playerTileContainer.classList.remove("unclickable");
   info.textContent = `Your turn: ${level} Tap${level > 1 ? "s" : ""}`;
 }
+
+function activateTile(number) {
+    const tile = document.querySelector(`[data-tile='${number}']`);
+  
+    tile.classList.add("activated");
+  
+    setTimeout(() => {
+      tile.classList.remove("activated");
+    }, 300);
+  }
