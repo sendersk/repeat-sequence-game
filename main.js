@@ -122,3 +122,18 @@ function startGame() {
   info.textContent = "Wait for the computer";
   nextRound();
 }
+
+startButton.addEventListener("click", startGame);
+resetButton.addEventListener("click", resetGame);
+
+tileContainer.addEventListener("click", (event) => {
+  const { tile } = event.target.dataset;
+
+  if (tile) handleClick(tile);
+});
+
+playerTileContainer.addEventListener("click", (event) => {
+  const { tile } = event.target.dataset;
+
+  if (tile) handleClick(tile);
+});
