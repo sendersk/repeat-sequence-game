@@ -67,3 +67,21 @@ function nextStep() {
 
   return random;
 }
+
+function nextRound() {
+  level += 1;
+
+  tileContainer.classList.add("unclickable");
+  playerTileContainer.classList.add("unclickable");
+  info.textContent = "Wait for the computer";
+  heading.textContent = `Level ${level} of 20`;
+
+  const nextSequence = [...sequence];
+  nextSequence.push(nextStep());
+  playRound(nextSequence);
+
+  sequence = [...nextSequence];
+  setTimeout(() => {
+    humanTurn(level);
+  }, level * 500 + 1000);
+}
