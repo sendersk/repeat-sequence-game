@@ -114,3 +114,11 @@ function handleClick(tile) {
     remainingTaps > 1 ? "s" : ""
   }`;
 }
+
+function startGame() {
+  startButton.classList.add("hidden");
+  resetButton.classList.remove("hidden");
+  info.classList.remove("hidden");
+  info.textContent = "Wait for the computer";
+  nextRound();
+}
