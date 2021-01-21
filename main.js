@@ -85,3 +85,32 @@ function nextRound() {
     humanTurn(level);
   }, level * 500 + 1000);
 }
+
+function handleClick(tile) {
+  const index = humanSequence.push(tile) - 1;
+
+  const remainingTaps = sequence.length - humanSequence.length;
+
+  if (humanSequence[index] !== sequence[index]) {
+    resetGame("Oops! Game over, you pressed the wrong tile");
+    return;
+  }
+
+  if (humanSequence.length === sequence.length) {
+    if (humanSequence.length === 20) {
+      resetGame("Congrats! You completed all the levels");
+      return;
+    }
+
+    humanSequence = [];
+    info.textContent = "Success! Keep going!";
+    setTimeout(() => {
+      nextRound();
+    }, 1000);
+    return;
+  }
+
+  info.textContent = `Your turn: ${remainingTaps} Tap${
+    remainingTaps > 1 ? "s" : ""
+  }`;
+}
