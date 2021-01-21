@@ -20,3 +20,8 @@ function resetGame() {
   tileContainer.classList.add("unclickable");
   playerTileContainer.classList.add("unclickable");
 }
+
+function humanTurn(level) {
+  playerTileContainer.classList.remove("unclickable");
+  info.textContent = `Your turn: ${level} Tap${level > 1 ? "s" : ""}`;
+}
