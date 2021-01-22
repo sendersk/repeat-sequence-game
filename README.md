@@ -6,6 +6,7 @@
 - [Description](#description)
 - [How to use](#how-to-use)
 - [Technologies used](#technologies-used)
+- [What I plan to do next](#what-i-plan-to-do-next)
 
 ## DEMO
 
@@ -31,7 +32,7 @@ This is a simple memory game. The game consists of two boxes, one for the comput
 - CSS
 - JavaScript ES6+
 
-## What I what to do next:
+## What I plan to do next
 
 - Adapt project to Responsive Web Design.
 - Improve game appearance.
