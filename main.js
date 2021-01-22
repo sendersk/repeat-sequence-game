@@ -7,7 +7,7 @@ const resetButton = document.querySelector(".js-reset");
 const info = document.querySelector(".js-info");
 const heading = document.querySelector(".js-heading");
 const tileContainer = document.querySelector(".js-container");
-const playerTileContainer = document.querySelector(".js-player-container");
+const humanTileContainer = document.querySelector(".js-player-container");
 
 function resetGame() {
   resetButton.classList.add("hidden");
@@ -18,11 +18,11 @@ function resetGame() {
   heading.textContent = "Repeat Game";
   info.classList.add("hidden");
   tileContainer.classList.add("unclickable");
-  playerTileContainer.classList.add("unclickable");
+  humanTileContainer.classList.add("unclickable");
 }
 
 function humanTurn(level) {
-  playerTileContainer.classList.remove("unclickable");
+  humanTileContainer.classList.remove("unclickable");
   info.textContent = `Your turn: ${level} Tap${level > 1 ? "s" : ""}`;
 }
 
@@ -70,11 +70,11 @@ function nextStep() {
 
 function nextRound() {
   level += 1;
-
+  
   tileContainer.classList.add("unclickable");
-  playerTileContainer.classList.add("unclickable");
+  humanTileContainer.classList.add("unclickable");
   info.textContent = "Wait for the computer";
-  heading.textContent = `Level ${level} of 20`;
+  heading.textContent = `Level ${level} of 5`;
 
   const nextSequence = [...sequence];
   nextSequence.push(nextStep());
@@ -92,13 +92,13 @@ function handleClick(tile) {
   const remainingTaps = sequence.length - humanSequence.length;
 
   if (humanSequence[index] !== sequence[index]) {
-    resetGame("Oops! Game over, you pressed the wrong tile");
+    info.textContent = "Oops! Game over, you pressed the wrong tile";
     return;
   }
 
   if (humanSequence.length === sequence.length) {
-    if (humanSequence.length === 20) {
-      resetGame("Congrats! You completed all the levels");
+    if (humanSequence.length === 5) {
+      info.textContent = "Congrats! You completed all the levels";
       return;
     }
 
@@ -132,7 +132,7 @@ tileContainer.addEventListener("click", (event) => {
   if (tile) handleClick(tile);
 });
 
-playerTileContainer.addEventListener("click", (event) => {
+humanTileContainer.addEventListener("click", (event) => {
   const { tile } = event.target.dataset;
 
   if (tile) handleClick(tile);
