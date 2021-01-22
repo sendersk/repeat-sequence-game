@@ -7,7 +7,8 @@ const resetButton = document.querySelector(".js-reset");
 const info = document.querySelector(".js-info");
 const heading = document.querySelector(".js-heading");
 const tileContainer = document.querySelector(".js-container");
-const humanTileContainer = document.querySelector(".js-player-container");
+const humanTileContainer = document.querySelector(".js-human-container");
+const selectNumber = document.querySelector(".js-select")
 
 function resetGame() {
   resetButton.classList.add("hidden");
@@ -15,6 +16,7 @@ function resetGame() {
   humanSequence = [];
   level = 0;
   startButton.classList.remove("hidden");
+  selectNumber.classList.remove("hidden")
   heading.textContent = "Repeat Game";
   info.classList.add("hidden");
   tileContainer.classList.add("unclickable");
@@ -70,11 +72,10 @@ function nextStep() {
 
 function nextRound() {
   level += 1;
-  
   tileContainer.classList.add("unclickable");
   humanTileContainer.classList.add("unclickable");
   info.textContent = "Wait for the computer";
-  heading.textContent = `Level ${level} of 5`;
+  heading.textContent = `Level ${level} of ${+selectNumber.value}`;
 
   const nextSequence = [...sequence];
   nextSequence.push(nextStep());
@@ -93,12 +94,16 @@ function handleClick(tile) {
 
   if (humanSequence[index] !== sequence[index]) {
     info.textContent = "Oops! Game over, you pressed the wrong tile";
+    tileContainer.classList.add("unclickable");
+    humanTileContainer.classList.add("unclickable");
     return;
   }
 
   if (humanSequence.length === sequence.length) {
-    if (humanSequence.length === 5) {
+    if (humanSequence.length === +selectNumber.value) {
       info.textContent = "Congrats! You completed all the levels";
+      tileContainer.classList.add("unclickable");
+      humanTileContainer.classList.add("unclickable");
       return;
     }
 
@@ -118,6 +123,7 @@ function handleClick(tile) {
 function startGame() {
   startButton.classList.add("hidden");
   resetButton.classList.remove("hidden");
+  selectNumber.classList.add("hidden")
   info.classList.remove("hidden");
   info.textContent = "Wait for the computer";
   nextRound();
