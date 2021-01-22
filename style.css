@@ -18,15 +18,15 @@ body {
 
 .game {
   position: absolute;
-  top: 50%;
+  /* top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 }
 
 .game-field {
     display: grid;
-    grid-template-columns: 45% 45% 10%;
-    grid-gap: 50px;
+    grid-template-columns: 40% 40% 20%;
+    grid-gap: 40px;
 }
 
 .hidden {
@@ -46,7 +46,7 @@ header {
   font-size: 3em;
 }
 
-.tile-container, .player-tile-container {
+.tile-container, .human-tile-container {
   display: grid;
   grid-template-rows: 50px 50px 50px 50px;
   grid-template-columns: 50px 50px 50px 50px;
@@ -127,7 +127,14 @@ header {
   .tile-container {
     width: 100%;
     height: 100%;
-    grid-template-rows: 60px 60px 60px 60px;
-    grid-template-columns: 60px 60px 60px 60px;
+    grid-template-rows: 30px 30px 30px 30px;
+    grid-template-columns: 30px 30px 30px 30px;
+  }
+
+  .tile-container {
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 30px 30px 30px 30px;
+    grid-template-columns: 30px 30px 30px 30px;
   }
 }
