@@ -9,6 +9,7 @@ const heading = document.querySelector(".js-heading");
 const tileContainer = document.querySelector(".js-container");
 const humanTileContainer = document.querySelector(".js-human-container");
 const selectNumber = document.querySelector(".js-select");
+const label = document.querySelector(".js-label")
 
 function resetGame() {
   resetButton.classList.add("hidden");
@@ -18,6 +19,7 @@ function resetGame() {
   selectNumber.value = 5;
   startButton.classList.remove("hidden");
   selectNumber.classList.remove("hidden");
+  label.classList.remove("hidden")
   heading.textContent = "Repeat Game";
   info.classList.add("hidden");
   tileContainer.classList.add("unclickable");
@@ -125,6 +127,7 @@ function startGame() {
   startButton.classList.add("hidden");
   resetButton.classList.remove("hidden");
   selectNumber.classList.add("hidden");
+  label.classList.add("hidden")
   info.classList.remove("hidden");
   info.textContent = "Wait for the computer";
   nextRound();
