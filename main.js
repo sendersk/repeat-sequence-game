@@ -15,6 +15,7 @@ function resetGame() {
   sequence = [];
   humanSequence = [];
   level = 0;
+  selectNumber.value = 5
   startButton.classList.remove("hidden");
   selectNumber.classList.remove("hidden")
   heading.textContent = "Repeat Game";
