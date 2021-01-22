@@ -8,16 +8,16 @@ const info = document.querySelector(".js-info");
 const heading = document.querySelector(".js-heading");
 const tileContainer = document.querySelector(".js-container");
 const humanTileContainer = document.querySelector(".js-human-container");
-const selectNumber = document.querySelector(".js-select")
+const selectNumber = document.querySelector(".js-select");
 
 function resetGame() {
   resetButton.classList.add("hidden");
   sequence = [];
   humanSequence = [];
   level = 0;
-  selectNumber.value = 5
+  selectNumber.value = 5;
   startButton.classList.remove("hidden");
-  selectNumber.classList.remove("hidden")
+  selectNumber.classList.remove("hidden");
   heading.textContent = "Repeat Game";
   info.classList.add("hidden");
   tileContainer.classList.add("unclickable");
@@ -124,7 +124,7 @@ function handleClick(tile) {
 function startGame() {
   startButton.classList.add("hidden");
   resetButton.classList.remove("hidden");
-  selectNumber.classList.add("hidden")
+  selectNumber.classList.add("hidden");
   info.classList.remove("hidden");
   info.textContent = "Wait for the computer";
   nextRound();
